@@ -1,10 +1,9 @@
-import './App.css';
+import React from 'react';
 
-function Main() {
+function Main({ children }) {
   return (
     <main>
-      <h1>Welcome to Little Lemon</h1>
-      
+      {children} {/* This will render the Routes defined in App.js */}
     </main>
   );
 }

@@ -1,23 +1,38 @@
 import './App.css';
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Nav from './Nav';
 import Main from './Main';
+import CallToAction from './CallToAction';
+import BookingPage from './BookingPage';
+import Homepage from './Homepage';
+import Specials from './Specials';  // Import Specials component
+import CustomersSay from './CustomersSay'; // Import CustomersSay component
+import Chicago from './Chicago'; // Import Chicago component
 import Footer from './Footer';
 
 function App() {
   return (
     <>
-      <Header>Homepage
-      </Header>
-      <Nav>
-      </Nav>
+      <Header>Little Lemon</Header>
+      <Nav />
       <Main>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/specials" element={<Specials />} /> {/* New route for Specials */}
+          <Route path="/customers" element={<CustomersSay />} /> {/* New route for CustomersSay */}
+          <Route path="/chicago" element={<Chicago />} /> {/* New route for Chicago */}
+        </Routes>
       </Main>
-      <Footer>
-      </Footer>
+      <Footer />
     </>
   );
 }
 
 export default App;
+
+
+
+
