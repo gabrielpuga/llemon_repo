@@ -32,20 +32,24 @@ nav {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Keep this for logo on the left */
   z-index: 999;
   background-color: white;
+  padding: 0 20px; /* Add horizontal padding */
 }
 
 nav img {
   max-width: 200px;
+  padding-left: 20px; /* Add padding to the left of the logo */
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-grow: 1; /* Allow ul to grow */
+  justify-content: center; /* Center the nav items */
+  margin: 0; /* Remove default margin */
 }
 
 nav li {
@@ -56,11 +60,12 @@ nav li {
 nav a {
   text-decoration: none;
   color: #333;
+  font-weight: bold; /* Make text options bolder */
 }
 
 /* Main Content Area */
 main {
-  margin-top: 60px; /* Push down from nav */
+  margin-top: 60px; /* Push down from nav height */
   padding-bottom: 40px; /* Add space before footer */
 }
 
@@ -100,6 +105,49 @@ main {
   font-size: 16pt;
   font-weight: bold;
 }
+
+/* BookingPage Styles */
+.booking-page {
+  background-color: #495e57; /* Same background color as CallToAction */
+  padding: 40px 20px; /* Similar padding */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  border-radius: 12px; /* Rounded corners */
+  margin: 40px auto; /* Center and space it from other elements */
+  max-width: 600px; /* Limit the width */
+}
+
+.booking-page h2 {
+  font-size: 2rem; /* Heading size */
+}
+
+.booking-page .form-group {
+  margin-bottom: 20px; /* Space between form fields */
+}
+
+.booking-page label {
+  display: block; /* Labels on new line */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.booking-page input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for input fields */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* No border */
+}
+
+.booking-page button {
+  background-color: #F4CE14; /* Button color */
+  color: black; /* Text color */
+  padding: 10px 20px; /* Padding for button */
+  border: none; /* No border */
+  border-radius: 12px; /* Rounded corners */
+  font-size: 16pt; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+}
+
 
 /* Specials Styles */
 .specials {
@@ -142,11 +190,12 @@ main {
 footer {
   background-color: #000;
   color: white;
-  padding: 5px;
+  padding: 10px; /* Adjusted for better appearance */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center items */
   width: 100%;
+  margin-top: 20px; /* Space between content and footer */
 }
 
 footer img {
@@ -157,7 +206,7 @@ footer img {
 
 footer section {
   flex-grow: 1;
-  text-align: left;
+  text-align: center; /* Center text within the section */
 }
 
 /* Form Styles */
@@ -187,5 +236,6 @@ form {
     justify-items: center;
   }
 }
+
 
 

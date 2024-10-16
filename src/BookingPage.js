@@ -17,7 +17,7 @@ function BookingPage() {
     <div className="booking-page">
       <h2>Book a Table</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -27,7 +27,7 @@ function BookingPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="date">Date:</label>
           <input
             type="date"
@@ -37,7 +37,7 @@ function BookingPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="time">Time:</label>
           <input
             type="time"
@@ -47,7 +47,7 @@ function BookingPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="guests">Number of Guests:</label>
           <input
             type="number"
@@ -65,3 +65,4 @@ function BookingPage() {
 }
 
 export default BookingPage;
+
