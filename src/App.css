@@ -1,31 +1,27 @@
 /* General Styles */
 body {
-  font-family: 'Markazi Text', serif; /* Changed to the specified font */
+  font-family: 'Markazi Text', serif;
   margin: 0;
   padding: 0;
-  text-align: center; /* Centered text for the body */
+  text-align: center;
 }
 
 /* Header Styles */
 header {
   padding-top: 150px;
-  background-color: #495e57; /* Changed to the specified color */
+  background-color: white;
 }
 
 header section {
   width: 80%;
   margin-left: 10%;
   padding-bottom: 50px;
-  color: #EDEFEE; /* Adjusted text color */
+  color: #333;
 }
 
 header img {
-  height: 400px;
-  border-radius: 12pt; /* Maintained original border-radius */
-  max-width: 100%; /* Make the image responsive */
-  height: auto; /* Maintain aspect ratio */
-  display: block;
-  margin: 0 auto;
+  max-width: 150px;
+  height: auto;
 }
 
 /* Navigation Styles */
@@ -38,7 +34,11 @@ nav {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  background-color: white; /* Background color for the nav */
+  background-color: white;
+}
+
+nav img {
+  max-width: 200px;
 }
 
 nav ul {
@@ -55,28 +55,48 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #333; /* Link color */
+  color: #333;
+}
+
+/* Main Content Area */
+main {
+  margin-top: 60px; /* Push down from nav */
+  padding-bottom: 40px; /* Add space before footer */
 }
 
 /* Call to Action Styles */
 .call-to-action {
-  background-color: #f8f8f8; /* Keep original background */
-  padding: 20px;
-  text-align: center;
+  background-color: #495e57;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+}
+
+.cta-image {
+  max-width: 200px;
+  height: auto;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.cta-text {
+  color: white;
 }
 
 .call-to-action h1 {
   font-size: 2.5rem;
-  color: #333;
 }
 
 .call-to-action button {
-  background-color: #F4CE14; /* Changed to the specified button color */
+  background-color: #F4CE14;
   color: black;
   padding: 20px;
   border: none;
-  text-decoration: none;
-  border-radius: 12px; /* Updated border-radius */
+  border-radius: 12px;
   font-size: 16pt;
   font-weight: bold;
 }
@@ -120,21 +140,24 @@ nav a {
 
 /* Footer Styles */
 footer {
-  background-color: #333;
+  background-color: #000;
   color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-footer section {
-  justify-items: center;
-  width: 80%;
-  margin-left: 10%;
-  gap: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 footer img {
-  height: 300px;
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+
+footer section {
+  flex-grow: 1;
+  text-align: left;
 }
 
 /* Form Styles */
@@ -164,3 +187,5 @@ form {
     justify-items: center;
   }
 }
+
+

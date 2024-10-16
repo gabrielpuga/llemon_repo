@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Header';
 import Nav from './Nav';
 import Main from './Main';
 import CallToAction from './CallToAction';
@@ -15,7 +14,6 @@ import Footer from './Footer';
 function App() {
   return (
     <>
-      <Header>Little Lemon</Header>
       <Nav />
       <Main>
         <Routes>

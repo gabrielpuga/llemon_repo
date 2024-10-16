@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <nav>
+      <img src="/assets/images/NAV-LOGO.png" alt="Little Lemon Logo" />
       <ul>
         <li><Link to="/">Homepage</Link></li>
         <li><Link to="/booking">Booking</Link></li>
