@@ -5,6 +5,7 @@ import Nav from './Nav';
 import Main from './Main';
 import CallToAction from './CallToAction';
 import BookingPage from './BookingPage';
+import ConfirmedBooking from './ConfirmedBooking';
 import Homepage from './Homepage';
 import Specials from './Specials';  // Import Specials component
 import CustomersSay from './CustomersSay'; // Import CustomersSay component
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/booking" element={<BookingPage />} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
           <Route path="/specials" element={<Specials />} /> {/* New route for Specials */}
           <Route path="/customers" element={<CustomersSay />} /> {/* New route for CustomersSay */}
           <Route path="/chicago" element={<Chicago />} /> {/* New route for Chicago */}
