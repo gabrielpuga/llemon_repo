@@ -3,7 +3,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Nav from './Nav';
 import Main from './Main';
-import CallToAction from './CallToAction';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
 import Homepage from './Homepage';
@@ -19,7 +18,8 @@ function App() {
       <Main>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/booking" element={<BookingPage />} />
+          {/* <Route path="/booking" element={<BookingPage />} /> */}
+          <Route path="/booking" element={<Main><BookingPage /></Main>} />
           <Route path="/confirmed" element={<ConfirmedBooking />} />
           <Route path="/specials" element={<Specials />} /> {/* New route for Specials */}
           <Route path="/customers" element={<CustomersSay />} /> {/* New route for CustomersSay */}

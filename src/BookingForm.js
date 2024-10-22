@@ -1,28 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
-const BookingForm = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+const BookingForm = ({ availableTimes = [] }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     date: '',
     time: '17:00',
     guests: 1,
     occasion: 'Birthday',
   });
-
-  const [availableTimes, setAvailableTimes] = useState([
-    '17:00',
-    '17:30',
-    '18:00',
-    '18:30',
-    '19:00',
-    '19:30',
-    '20:00',
-    '20:30',
-    '21:00',
-    '21:30',
-    '22:00',
-  ]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +21,7 @@ const BookingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    navigate('/confirmed'); // Navigate to ConfirmedBooking component
+    navigate('/confirmed');
   };
 
   return (
@@ -57,11 +43,15 @@ const BookingForm = () => {
           value={formData.time}
           onChange={handleChange}
         >
-          {availableTimes.map((time) => (
-            <option key={time} value={time}>
-              {time}
-            </option>
-          ))}
+          {availableTimes.length > 0 ? (
+            availableTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))
+          ) : (
+            <option>No available times</option>
+          )}
         </select>
         
         <label htmlFor="guests">Number of guests</label>
@@ -94,6 +84,8 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
+
+
 
 
 
