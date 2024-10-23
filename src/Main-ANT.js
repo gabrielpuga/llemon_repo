@@ -4,14 +4,14 @@ const initialState = {
   availableTimes: [],
 };
 
-export const timesReducer = (state, action) => {
-    switch (action.type) {
-      case 'SET_TIMES':
-        return { ...state, availableTimes: action.payload };
-      default:
-        return state;
-    }
-  };
+function timesReducer(state, action) {
+  switch (action.type) {
+    case 'SET_TIMES':
+      return { ...state, availableTimes: action.payload };
+    default:
+      return state;
+  }
+}
 
 function Main({ children }) {
   const [state, dispatch] = useReducer(timesReducer, initialState);
@@ -49,3 +49,9 @@ function Main({ children }) {
 }
 
 export default Main;
+
+
+
+
+
+
