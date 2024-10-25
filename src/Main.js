@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { fetchAPI } from '../public/api.js';
 
 /* global fetchAPI, submitAPI */
 

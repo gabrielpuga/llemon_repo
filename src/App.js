@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { fetchAPI } from '../public/api.js';
 import Nav from './Nav.js';
 import Main from './Main.js';
 import BookingPage from './BookingPage.js';
