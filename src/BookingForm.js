@@ -47,8 +47,9 @@ const BookingForm = ({ availableTimes = [], submitForm }) => {
       existingBookings.push(formData);
       localStorage.setItem('bookings', JSON.stringify(existingBookings));
 
-      navigate('/confirmed'); // Navigate after submission
+      
     }
+    navigate('/confirmed'); // Navigate after submission
   };
 
   return (
