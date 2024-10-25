@@ -1,19 +1,15 @@
+// BookingPage.js
 import React from 'react';
-import BookingForm from './BookingForm';
+import BookingForm from './BookingForm.js';
 
-const BookingPage = ({ availableTimes, updateTimes }) => {
-  console.log("Available Times in BookingPage:", availableTimes); // This should log the times
+const BookingPage = ({ availableTimes, updateTimes, submitForm }) => {
   return (
     <div>
       <h1>Book Your Reservation</h1>
       <p>Please fill out the form below to make a reservation.</p>
-      <BookingForm availableTimes={availableTimes} updateTimes={updateTimes} />
+      <BookingForm availableTimes={availableTimes} updateTimes={updateTimes} submitForm={submitForm} />
     </div>
   );
 };
 
-
 export default BookingPage;
-
-
-

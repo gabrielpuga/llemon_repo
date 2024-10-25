@@ -1,36 +1,54 @@
 import React, { useReducer, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+/* global fetchAPI, submitAPI */
 
 const initialState = {
   availableTimes: [],
 };
 
-export const timesReducer = (state, action) => {
-    switch (action.type) {
-      case 'SET_TIMES':
-        return { ...state, availableTimes: action.payload };
-      default:
-        return state;
-    }
-  };
+function timesReducer(state, action) {
+  switch (action.type) {
+    case 'SET_TIMES':
+      return { ...state, availableTimes: action.payload };
+    default:
+      return state;
+  }
+}
 
 function Main({ children }) {
+  const navigate = useNavigate();
   const [state, dispatch] = useReducer(timesReducer, initialState);
 
-  const initializeTimes = () => {
-    const times = ['17:00', '17:30', '18:00', '18:30', '19:00'];
+  const initializeTimes = async () => {
+    const today = new Date(); // Create a Date object for today
+    const times = await fetchAPI(today); // Fetch available times for today
     dispatch({ type: 'SET_TIMES', payload: times });
-    console.log("Initialized Available Times:", times);
   };
 
-  const updateTimes = (selectedDate) => {
-    // For now, we'll return the same available times.
-    dispatch({
-      type: 'SET_TIMES',
-      payload: ['17:00', '17:30', '18:00', '18:30', '19:00']
-    });
+  const updateTimes = async (selectedDate) => {
+    const times = await fetchAPI(selectedDate); // Fetch available times for the selected date
+    dispatch({ type: 'SET_TIMES', payload: times });
   };
+
+  // Inside your submitForm function
+const submitForm = async (formData) => {
+  const success = await window.submitAPI(formData);
+  if (success) {
+    // Get existing bookings from local storage
+    const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    
+    // Add the new booking
+    existingBookings.push(formData);
+    
+    // Save back to local storage
+    localStorage.setItem('bookings', JSON.stringify(existingBookings));
+    navigate('/confirmed');
+  }
+};
+
   
-
   useEffect(() => {
     initializeTimes();
   }, []);
@@ -40,12 +58,12 @@ function Main({ children }) {
       {React.Children.map(children, (child) =>
         React.cloneElement(child, {
           availableTimes: state.availableTimes,
-          updateTimes, // Ensure this is passed correctly
+          updateTimes,
+          submitForm, // Pass the submitForm function to child components
         })
       )}
     </main>
   );
-  
 }
 
 export default Main;

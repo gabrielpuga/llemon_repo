@@ -1,8 +1,8 @@
 import React from 'react';
-import CallToAction from './CallToAction';
-import Specials from './Specials';
-import CustomersSay from './CustomersSay';
-import Chicago from './Chicago';
+import CallToAction from './CallToAction.js';
+import Specials from './Specials.js';
+import CustomersSay from './CustomersSay.js';
+import Chicago from './Chicago.js';
 
 function Homepage() {
   return (

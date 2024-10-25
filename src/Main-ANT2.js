@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 
-/* global fetchAPI, submitAPI */
+/* global fetchAPI */
 
 const initialState = {
   availableTimes: [],
@@ -29,15 +29,6 @@ function Main({ children }) {
     dispatch({ type: 'SET_TIMES', payload: times });
   };
 
-  const submitForm = async (formData) => {
-    const success = await submitAPI(formData); // Call the submitAPI function
-    if (success) {
-      // You might want to navigate here or manage success state
-      // For now, just log success
-      console.log('Booking submitted successfully:', formData);
-    }
-  };
-
   useEffect(() => {
     initializeTimes();
   }, []);
@@ -48,11 +39,14 @@ function Main({ children }) {
         React.cloneElement(child, {
           availableTimes: state.availableTimes,
           updateTimes,
-          submitForm, // Pass the submitForm function to child components
         })
       )}
+
     </main>
   );
+  
 }
 
 export default Main;
+
+
